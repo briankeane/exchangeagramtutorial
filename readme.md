@@ -242,7 +242,26 @@ func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath
         
     }
 ```
-
+#####FilterCell
+1. create FilterCell class - inherits from UICollectionViewCell
+2. overide the initializer... create the imageView, display it
+```swift
+class FilterCell: UICollectionViewCell {
+    
+    var imageView: UIImageView!
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height))
+        contentView.addSubview(imageView)
+    }
+    
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+```
 
 
 
