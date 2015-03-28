@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MobileCoreServices
 
-class FeedViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class FeedViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -34,6 +35,26 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     */
     
+    @IBAction func snapBarButtonItemTapped(sender: UIBarButtonItem) {
+        // if the camera is available
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
+            
+            // set up the camera as the source type
+            var cameraController = UIImagePickerController()
+            cameraController.delegate = self
+            cameraController.sourceType = UIImagePickerControllerSourceType.Camera
+            
+            // set up mediaTypes allowed by camera
+            let mediaTypes:[AnyObject] = [kUTTypeImage]
+            cameraController.mediaTypes = mediaTypes
+            
+            cameraController.allowsEditing = false
+            
+            // present the camera controller on the screen
+            self.presentViewController(cameraController, animated: true, completion: nil)
+        }
+    }
+
     // UICollectionViewDataASource
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1

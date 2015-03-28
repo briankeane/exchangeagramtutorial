@@ -15,6 +15,7 @@
 		4B1342571AC6FD5500595200 /* ExchangeAGramTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1342561AC6FD5500595200 /* ExchangeAGramTests.swift */; };
 		4B1342611AC6FFAB00595200 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1342601AC6FFAB00595200 /* FeedViewController.swift */; };
 		4B1342631AC7038000595200 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1342621AC7038000595200 /* FeedCell.swift */; };
+		4B1342651AC7089C00595200 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B1342641AC7089C00595200 /* MobileCoreServices.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		4B1342561AC6FD5500595200 /* ExchangeAGramTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeAGramTests.swift; sourceTree = "<group>"; };
 		4B1342601AC6FFAB00595200 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		4B1342621AC7038000595200 /* FeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		4B1342641AC7089C00595200 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B1342651AC7089C00595200 /* MobileCoreServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +66,7 @@
 		4B13422F1AC6FD5500595200 = {
 			isa = PBXGroup;
 			children = (
+				4B1342641AC7089C00595200 /* MobileCoreServices.framework */,
 				4B13423A1AC6FD5500595200 /* ExchangeAGram */,
 				4B1342531AC6FD5500595200 /* ExchangeAGramTests */,
 				4B1342391AC6FD5500595200 /* Products */,
@@ -415,6 +419,7 @@
 				4B13425C1AC6FD5500595200 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4B13425D1AC6FD5500595200 /* Build configuration list for PBXNativeTarget "ExchangeAGramTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +428,7 @@
 				4B13425F1AC6FD5500595200 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

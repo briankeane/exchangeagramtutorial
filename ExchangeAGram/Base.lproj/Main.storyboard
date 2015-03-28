@@ -59,10 +59,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="avl-o5-rch">
-                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="zZR-NF-WQg"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="zZR-NF-WQg">
+                            <connections>
+                                <action selector="snapBarButtonItemTapped:" destination="BYZ-38-t0r" id="4Hp-lJ-eIn"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="OlR-up-DaC" id="Pun-BH-I4f"/>
+                        <outlet property="snapBarButtonItemTapped" destination="zZR-NF-WQg" id="gJp-pl-hLD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
