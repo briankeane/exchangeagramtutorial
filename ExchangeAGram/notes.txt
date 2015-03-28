@@ -1,1 +1,19 @@
-notes.txt
+Storyboard Updates
+1) change Collection View cell size to 150/150
+2) Delete ViewController and replace with new FeedViewControllerClass
+  -- change class in MainStoryboard view controller
+3) Wire the Collection View to FeedViewController.swift (outlet: collectionView)
+
+UICollectionViewDataSource
+1) add protocols to FeedViewController class declaration
+2) Wire collectionView to FeedViewController as datasource & delegate
+3) Add numberOfSectionsInCollectionView func to FeedViewController
+   -- also add collectionView:numberOfItemsInSection & collectionView:cellForItemAtIndexPath
+
+FeedCell
+1) Create FeedCell class inherits from UICollectionViewCell
+2) Add ReuseIdentifier to Collection View Cell
+3) Make sure collectionViewCell's class is FeedCell in storyboard
+4) Add ImageView & label to cell
+  -- label color: white, fontsize: 12
+5) Wire ImageView & label to FeedCell.swift (imageView, captionLabel)
