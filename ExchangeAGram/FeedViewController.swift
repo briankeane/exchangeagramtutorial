@@ -107,9 +107,12 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
         // save the item
         (UIApplication.sharedApplication().delegate as AppDelegate).saveContext()
         
+        feedArray.append(feedItem)
         
         // dismiss the imagePicker
         self.dismissViewControllerAnimated(true, completion: nil)
+        
+        self.collectionView.reloadData()
     }
 
     // UICollectionViewDataASource
@@ -118,10 +121,19 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return feedArray.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        
+        var cell:FeedCell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as FeedCell
+        
+        let thisItem = feedArray[indexPath.row] as FeedItem
+        
+        // populate the cell info
+        cell.imageView.image = UIImage(data: thisItem.image)
+        cell.captionLabel.text = thisItem.caption
+    
+        return cell
     }
 }

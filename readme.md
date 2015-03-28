@@ -146,3 +146,32 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
   }
 ```
 
+#####Displaying the FeedItem
+1. fix the UICollectionViewDataSource functions
+2. fix my mistake earlier (left non-existant outlet wired to camera... decouple it in storyboard)
+3. make sure to append feedArray and refresh
+4. put spacing around Collection View Cells (section insert) in Main Storyboard
+```swift
+// UICollectionViewDataASource
+func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    return 1
+}
+
+func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    return feedArray.count
+}
+
+func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    
+    var cell:FeedCell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as FeedCell
+    
+    let thisItem = feedArray[indexPath.row] as FeedItem
+    
+    // populate the cell info
+    cell.imageView.image = UIImage(data: thisItem.image)
+    cell.captionLabel.text = thisItem.caption
+
+    return cell
+}
+```
+
