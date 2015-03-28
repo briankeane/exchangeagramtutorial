@@ -89,7 +89,37 @@
 1. change entity name to FeedItem
 2. add attributes to ExchangeAGram data model (caption: string, image, binaryData)
 3. editor/createNSManagedObjectSubclass....
-4. add '@objc (FeedItem)' to FeedItem.swift for obj c interation
+4. add '@objc (FeedItem)' to FeedItem.swift for obj c integration
 
-
+#####Persisting A FeedItem
+1. convert UIImage to UIImageJPEGRepresentation (in V)
+2. make sure CoreData is imported
+add persistence to imagePickerControllerDelegate (didFinishPickingMediaWithInfo)
+```swift
+// UIImagePickerControllerDelegate
+func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+    
+    // grab the image
+    let image = info[UIImagePickerControllerOriginalImage] as UIImage
+    
+    // convert UIImageInstance into NSData
+    let imageData = UIImageJPEGRepresentation(image, 1.0)
+    
+    // persist it in CoreData
+    let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
+    let entityDescription = NSEntityDescription.entityForName("FeedItem", inManagedObjectContext: managedObjectContext!)
+    
+    // create the item and fill it with data
+    let feedItem = FeedItem(entity: entityDescription!, insertIntoManagedObjectContext: managedObjectContext!)
+    feedItem.image = imageData
+    feedItem.caption = "test caption"
+    
+    // save the item
+    (UIApplication.sharedApplication().delegate as AppDelegate).saveContext()
+    
+    
+    // dismiss the imagePicker
+    self.dismissViewControllerAnimated(true, completion: nil)
+}
+```
 
