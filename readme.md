@@ -175,3 +175,16 @@ func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath ind
 }
 ```
 
+#####FilterViewController
+1. create FilterViewController class -- inherits from UIViewController
+2. add a property at the top of the new file: var thisFeedItem: FeedItem!
+
+#####didSelectItemAtIndexPath
+1. Add new collectionView function: didSelectItemAtIndexPath
+```swift
+func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
+        
+  let thisItem = feedArray[indexPath.row] as FeedItem
+}
+```
+
