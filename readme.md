@@ -188,3 +188,19 @@ func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath
 }
 ```
 
+#####Presenting the FilterViewController
+1. create the filterVC and push it onto the navigationController stack
+```swift
+    func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
+        
+        let thisItem = feedArray[indexPath.row] as FeedItem
+        
+        var filterVC = FilterViewController()
+        filterVC.thisFeedItem = thisItem
+        
+        self.navigationController?.pushViewController(filterVC, animated: false)
+    }
+```
+
+
+
