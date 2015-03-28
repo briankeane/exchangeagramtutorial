@@ -29,6 +29,9 @@ class FilterViewController: UIViewController, UICollectionViewDataSource, UIColl
         collectionView.dataSource = self
         collectionView.delegate = self
         
+        collectionView.backgroundColor = UIColor.whiteColor()
+        self.view.addSubview(collectionView)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,7 +42,7 @@ class FilterViewController: UIViewController, UICollectionViewDataSource, UIColl
     
     // UICollectionViewDataSource
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return 0
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {

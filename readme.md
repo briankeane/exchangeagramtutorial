@@ -230,6 +230,18 @@ func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath
       return UICollectionViewCell()
   }
 ```
+#####Finishing the UICollectionView
+1. Add backgroundcolor to collectionView
+2. display collectionView
+```swift
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        
+        collectionView.backgroundColor = UIColor.whiteColor()
+        self.view.addSubview(collectionView)
+        
+    }
+```
 
 
 
