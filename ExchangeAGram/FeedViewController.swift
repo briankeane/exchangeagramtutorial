@@ -75,6 +75,17 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
             self.presentViewController(alertController, animated: true, completion: nil)
         }
     }
+    
+    // UIImagePickerControllerDelegate
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+        
+        // grab the image
+        let image = info[UIImagePickerControllerOriginalImage] as UIImage
+        
+        // dismiss the imagePicker
+        self.dismissViewControllerAnimated(true, completion: nil)
+        
+    }
 
     // UICollectionViewDataASource
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
