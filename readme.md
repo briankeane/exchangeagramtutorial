@@ -85,4 +85,11 @@
   }
 ```
 
+#####Creating A FeedItem
+1. change entity name to FeedItem
+2. add attributes to ExchangeAGram data model (caption: string, image, binaryData)
+3. editor/createNSManagedObjectSubclass....
+4. add '@objc (FeedItem)' to FeedItem.swift for obj c interation
+
+
 
