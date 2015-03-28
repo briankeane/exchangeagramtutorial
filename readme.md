@@ -263,5 +263,26 @@ class FilterCell: UICollectionViewCell {
 }
 ```
 
+#####Implementing our FilterCell
+1. set up the FilterCell class in FilterViewController/viewDidLoad()
+```swift
+        collectionView.backgroundColor = UIColor.whiteColor()
+        collectionView.registerClass(FilterCell.self, forCellWithReuseIdentifier: "MyCell")        
+```
+2. drag downloaded imageAssets into imageAsset folder
+3. finish out collectionView/cellForRowAtIndexPath
+```swift
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        
+        let cell:FilterCell = collectionView.dequeueReusableCellWithReuseIdentifier("MyCell", forIndexPath: indexPath) as FilterCell
+        
+        cell.imageView.image = UIImage(named: "Placeholder")
+        
+        return cell
+    }
+```
+4. Somehow FilterCell class from last step got erased... redo it if necessary
+
+
 
 

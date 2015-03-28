@@ -18,7 +18,7 @@
 		4B1342651AC7089C00595200 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B1342641AC7089C00595200 /* MobileCoreServices.framework */; };
 		4B1342671AC716C600595200 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1342661AC716C600595200 /* FeedItem.swift */; };
 		4B1342691AC72A2500595200 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1342681AC72A2500595200 /* FilterViewController.swift */; };
-		4B13426D1AC747F000595200 /* FilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B13426C1AC747F000595200 /* FilterCell.swift */; };
+		4B1342711AC753E600595200 /* FilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1342701AC753E600595200 /* FilterCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +47,7 @@
 		4B1342641AC7089C00595200 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		4B1342661AC716C600595200 /* FeedItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
 		4B1342681AC72A2500595200 /* FilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
-		4B13426C1AC747F000595200 /* FilterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterCell.swift; sourceTree = "<group>"; };
+		4B1342701AC753E600595200 /* FilterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FilterCell.swift; path = ../FilterCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +72,6 @@
 		4B13422F1AC6FD5500595200 = {
 			isa = PBXGroup;
 			children = (
-				4B13426C1AC747F000595200 /* FilterCell.swift */,
 				4B1342641AC7089C00595200 /* MobileCoreServices.framework */,
 				4B13423A1AC6FD5500595200 /* ExchangeAGram */,
 				4B1342531AC6FD5500595200 /* ExchangeAGramTests */,
@@ -92,6 +91,7 @@
 		4B13423A1AC6FD5500595200 /* ExchangeAGram */ = {
 			isa = PBXGroup;
 			children = (
+				4B1342701AC753E600595200 /* FilterCell.swift */,
 				4B13423D1AC6FD5500595200 /* AppDelegate.swift */,
 				4B1342601AC6FFAB00595200 /* FeedViewController.swift */,
 				4B1342681AC72A2500595200 /* FilterViewController.swift */,
@@ -231,7 +231,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B13426D1AC747F000595200 /* FilterCell.swift in Sources */,
+				4B1342711AC753E600595200 /* FilterCell.swift in Sources */,
 				4B1342691AC72A2500595200 /* FilterViewController.swift in Sources */,
 				4B13423E1AC6FD5500595200 /* AppDelegate.swift in Sources */,
 				4B1342631AC7038000595200 /* FeedCell.swift in Sources */,
