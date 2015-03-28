@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		4B13423E1AC6FD5500595200 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B13423D1AC6FD5500595200 /* AppDelegate.swift */; };
 		4B1342411AC6FD5500595200 /* ExchangeAGram.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4B13423F1AC6FD5500595200 /* ExchangeAGram.xcdatamodeld */; };
-		4B1342431AC6FD5500595200 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1342421AC6FD5500595200 /* ViewController.swift */; };
 		4B1342461AC6FD5500595200 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B1342441AC6FD5500595200 /* Main.storyboard */; };
 		4B1342481AC6FD5500595200 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B1342471AC6FD5500595200 /* Images.xcassets */; };
 		4B13424B1AC6FD5500595200 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B1342491AC6FD5500595200 /* LaunchScreen.xib */; };
 		4B1342571AC6FD5500595200 /* ExchangeAGramTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1342561AC6FD5500595200 /* ExchangeAGramTests.swift */; };
+		4B1342611AC6FFAB00595200 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1342601AC6FFAB00595200 /* FeedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,13 +31,13 @@
 		4B13423C1AC6FD5500595200 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B13423D1AC6FD5500595200 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B1342401AC6FD5500595200 /* ExchangeAGram.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ExchangeAGram.xcdatamodel; sourceTree = "<group>"; };
-		4B1342421AC6FD5500595200 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4B1342451AC6FD5500595200 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4B1342471AC6FD5500595200 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4B13424A1AC6FD5500595200 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		4B1342501AC6FD5500595200 /* ExchangeAGramTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExchangeAGramTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B1342551AC6FD5500595200 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B1342561AC6FD5500595200 /* ExchangeAGramTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeAGramTests.swift; sourceTree = "<group>"; };
+		4B1342601AC6FFAB00595200 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				4B13423D1AC6FD5500595200 /* AppDelegate.swift */,
-				4B1342421AC6FD5500595200 /* ViewController.swift */,
+				4B1342601AC6FFAB00595200 /* FeedViewController.swift */,
 				4B1342441AC6FD5500595200 /* Main.storyboard */,
 				4B1342471AC6FD5500595200 /* Images.xcassets */,
 				4B1342491AC6FD5500595200 /* LaunchScreen.xib */,
@@ -215,8 +215,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B1342431AC6FD5500595200 /* ViewController.swift in Sources */,
 				4B13423E1AC6FD5500595200 /* AppDelegate.swift in Sources */,
+				4B1342611AC6FFAB00595200 /* FeedViewController.swift in Sources */,
 				4B1342411AC6FD5500595200 /* ExchangeAGram.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
