@@ -202,5 +202,35 @@ func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath
     }
 ```
 
+#####Begin Creating a UICollectionView
+1. create the layout and collectionView in viewDidLoad() function
+```swift
+  // create the layout
+  let layout = UICollectionViewFlowLayout()
+  layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+  layout.itemSize = CGSize(width: 150.0, height: 150.0)
+  
+  // create the collectionView using the layout
+  collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
+  
+  collectionView.dataSource = self
+  collectionView.delegate = self
+  
+}
+```
+2. add UICollectionViewDataSource & UICollectionViewDelegate to FilterViewController
+3. implement collectionView(numberOfItemsInSection) & collectionView(cellForItemAtIndexPath) stubs
+```swift
+  // UICollectionViewDataSource
+  func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+      return 1
+  }
+  
+  func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+      return UICollectionViewCell()
+  }
+```
+
+
 
 
