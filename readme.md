@@ -338,4 +338,25 @@ class FilterCell: UICollectionViewCell {
   ```
 
   ####Using the Filters
-  1. 
+1. Add context:CIContext up top: var context:CIcontext = CIContext(options: nil)
+2. add filteredImageFromImage function
+```swift
+func filteredImageFromImage (imageData: NSData, filter: CIFilter) -> UIImage {
+
+    let unfilteredImage = CIImage(data: imageData)
+    filter.setValue(unfilteredImage, forKey: kCIInputImageKey)
+    let filteredImage:CIImage = filter.outputImage
+
+    let extent = filteredImage.extent()
+    let cgImage:CGImageRef = context.createCGImage(filteredImage, fromRect: extent)
+
+    let finalImage = UIImage(CGImage: cgImage)
+
+    return finalImage
+}
+
+```
+#####Implementing Our Filters
+1. add var filters:[CIFilter] = [] to filterViewController & filters = photoFilters() to end of viewDidLoad()
+2. change numberOfItemsInSection to return filters.count
+3. in cellForItemAtIndexPath update the images  --  cell.imageView.image = filteredImageFromImage(thisFeedItem.image, filter: filters[indexPath.row])
