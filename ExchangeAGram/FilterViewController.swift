@@ -55,4 +55,16 @@ class FilterViewController: UIViewController, UICollectionViewDataSource, UIColl
         
         return cell
     }
+    
+    // Helper Function
+    func photoFilters() -> [CIFilter] {
+        
+        let blur = CIFilter(name: "CIGaussianBlur")
+        let instant = CIFilter(name: "CIPhotoEffectInstant")
+        let noir = CIFilter(name: "CIPhotoEffectNoir")
+        let transfer = CIFilter(name: "CIPhotoEffectTransfer")
+        let unsharpen = CIFilter(name: "CIUnsharpMask")
+        let monochrome = CIFilter(name: "CIColorMonochrome")
+        return []
+    }
 }

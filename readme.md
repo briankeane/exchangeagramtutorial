@@ -283,6 +283,24 @@ class FilterCell: UICollectionViewCell {
 ```
 4. Somehow FilterCell class from last step got erased... redo it if necessary
 
+#####PhotoFilters
+1. add photoFilters() function to FilterViewController
+```swift
+    // Helper Function
+    func photoFilters() -> [CIFilter] {
+        
+        let blur = CIFilter(name: "CIGaussianBlur")
+        let instant = CIFilter(name: "CIPhotoEffectInstant")
+        let noir = CIFilter(name: "CIPhotoEffectNoir")
+        let transfer = CIFilter(name: "CIPhotoEffectTransfer")
+        let unsharpen = CIFilter(name: "CIUnsharpMask")
+        let monochrome = CIFilter(name: "CIColorMonochrome")
+      
+```
+
+#####Properties of CIFilters
+
+
 
 
 
