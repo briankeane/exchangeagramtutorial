@@ -360,3 +360,17 @@ func filteredImageFromImage (imageData: NSData, filter: CIFilter) -> UIImage {
 1. add var filters:[CIFilter] = [] to filterViewController & filters = photoFilters() to end of viewDidLoad()
 2. change numberOfItemsInSection to return filters.count
 3. in cellForItemAtIndexPath update the images  --  cell.imageView.image = filteredImageFromImage(thisFeedItem.image, filter: filters[indexPath.row])
+
+#####Intro to GCD
+1. add async call to cellForItemAtIndexPath
+```swift
+        dispatch_async(filterQueue, { () -> Void in
+            let filterImage = self.filteredImageFromImage(self.thisFeedItem.image, filter: self.filters[indexPath.row])
+            
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                cell.imageView.image = filterImage
+            })
+        })
+        
+        return cell
+```
