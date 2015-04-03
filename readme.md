@@ -401,3 +401,10 @@ func filteredImageFromImage (imageData: NSData, filter: CIFilter) -> UIImage {
 ```
 #####Implementing our Thumbnail
 1. FilterViewController -- update this.feedItem.image to this.feedItem.thumbnail
+
+#####Additional Optimizations
+1. in FilterViewController, add a placeHolderImage constant at the top... then use it in cellForItemAtIndexPath (now it uses the same instance instead of creating a new one every time)
+2. add if statement (if cell.imageView.image {}) to cellForItemAtIndexPath to stop reloading...
+
+
+
