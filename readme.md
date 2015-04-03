@@ -384,4 +384,20 @@ func filteredImageFromImage (imageData: NSData, filter: CIFilter) -> UIImage {
 1. delete the app from the simulator
 2. press cmd-shift-k to clean the project
 
+#####Creating and saving a thumbnail
+1. in didFinishPickingMediaWithInfo (imagePickerController):
+```swift
+        // convert UIImageInstance into NSData
+        let imageData = UIImageJPEGRepresentation(image, 1.0)
+        let thumbNailData = UIImageJPEGRepresentation(image, 0.1)
 
+...
+
+        // create the item and fill it with data
+        let feedItem = FeedItem(entity: entityDescription!, insertIntoManagedObjectContext: managedObjectContext!)
+        feedItem.image = imageData
+        feedItem.thumbnail = thumbNailData
+        feedItem.caption = "test caption"
+```
+#####Implementing our Thumbnail
+1. FilterViewController -- update this.feedItem.image to this.feedItem.thumbnail
