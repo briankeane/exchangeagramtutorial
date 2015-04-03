@@ -374,3 +374,14 @@ func filteredImageFromImage (imageData: NSData, filter: CIFilter) -> UIImage {
         
         return cell
 ```
+
+#####Adding a ThumbNail to the FeedItem
+1. add a thumbnail attribute to the feedItem
+2. delete FeedItem and regenerate... manually adding @objc(FeedItem) to top
+3. Create a new group
+
+#####Cleaning out the Old App
+1. delete the app from the simulator
+2. press cmd-shift-k to clean the project
+
+
