@@ -447,8 +447,23 @@ func application(application: UIApplication, didFinishLaunchingWithOptions launc
 ```
 
 #####getCachedImage
-
-
+1. at bottom of FilterViewController
+```swift
+    func getCachedImage(imageNumber: Int) -> UIImage {
+        let fileName = "\(imageNumber)"
+        let uniquePath = tmp.stringByAppendingPathComponent(fileName)
+        var image:UIImage
+        
+        if NSFileManager.defaultManager().fileExistsAtPath(uniquePath) {
+            image = UIImage(contentsOfFile: uniquePath)!
+        } else {
+            self.cacheImage(imageNumber)
+            image = UIImage(contentsOfFile: uniquePath)!
+        }
+        
+        return image
+    }
+```
 
 
 
