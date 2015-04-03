@@ -406,5 +406,23 @@ func filteredImageFromImage (imageData: NSData, filter: CIFilter) -> UIImage {
 1. in FilterViewController, add a placeHolderImage constant at the top... then use it in cellForItemAtIndexPath (now it uses the same instance instead of creating a new one every time)
 2. add if statement (if cell.imageView.image {}) to cellForItemAtIndexPath to stop reloading...
 
+#####Cache
+1. go to appDelegate.swift in didFinishLaunchingWithOptions:
+```swift
+func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        // Override point for customization after application launch.
+        
+        let cache = NSURLCache(memoryCapacity: 8*1024*1024, diskCapacity: 20*1024*1024, diskPath: nil)
+        NSURLCache.setSharedURLCache(cache)
+        
+        return true
+    }
+    
+    func applicationDidReceiveMemoryWarning(application: UIApplication) {
+        NSURLCache.sharedURLCache().removeAllCachedResponses()
+    }
+```
+
+
 
 
