@@ -422,6 +422,32 @@ func application(application: UIApplication, didFinishLaunchingWithOptions launc
         NSURLCache.sharedURLCache().removeAllCachedResponses()
     }
 ```
+#####Cache Image
+1. in FilterViewController, add tmp directory and set up
+```swift
+  let placeHolderImage = UIImage(named: "Placeholder")  
+  
+  let tmp = NSTemporaryDirectory()
+```
+2. new function: FilterViewController.swift 
+```swift
+    // caching functions
+    func cacheImage(imageNumber: Int) {
+        let fileName = "\(imageNumber)"
+        let uniquePath = tmp.stringByAppendingPathComponent(fileName)
+        
+        if !NSFileManager.defaultManager().fileExistsAtPath(fileName) {
+            let data = self.thisFeedItem.thumbnail
+            let filter = self.filters[imageNumber]
+            let image = filteredImageFromImage(data, filter: filter)
+            UIImageJPEGRepresentation(image,1.0).writeToFile(uniquePath, atomically: true)
+            
+        }
+    }
+```
+
+#####getCachedImage
+
 
 
 

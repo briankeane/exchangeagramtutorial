@@ -21,6 +21,8 @@ class FilterViewController: UIViewController, UICollectionViewDataSource, UIColl
     
     let placeHolderImage = UIImage(named: "Placeholder")
     
+    let tmp = NSTemporaryDirectory()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -121,5 +123,19 @@ class FilterViewController: UIViewController, UICollectionViewDataSource, UIColl
         let finalImage = UIImage(CGImage: cgImage)
         
         return finalImage!
+    }
+    
+    // caching functions
+    func cacheImage(imageNumber: Int) {
+        let fileName = "\(imageNumber)"
+        let uniquePath = tmp.stringByAppendingPathComponent(fileName)
+        
+        if !NSFileManager.defaultManager().fileExistsAtPath(fileName) {
+            let data = self.thisFeedItem.thumbnail
+            let filter = self.filters[imageNumber]
+            let image = filteredImageFromImage(data, filter: filter)
+            UIImageJPEGRepresentation(image,1.0).writeToFile(uniquePath, atomically: true)
+            
+        }
     }
 }
