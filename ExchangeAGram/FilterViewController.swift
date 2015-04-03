@@ -59,7 +59,7 @@ class FilterViewController: UIViewController, UICollectionViewDataSource, UIColl
         
         let cell:FilterCell = collectionView.dequeueReusableCellWithReuseIdentifier("MyCell", forIndexPath: indexPath) as FilterCell
         
-        // cell.imageView.image = UIImage(named: "Placeholder")
+        cell.imageView.image = UIImage(named: "Placeholder")
         
         let filterQueue:dispatch_queue_t = dispatch_queue_create("filter queue", nil)
         
