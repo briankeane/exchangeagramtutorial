@@ -59,6 +59,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="avl-o5-rch">
+                        <barButtonItem key="leftBarButtonItem" title="Profile" id="5gP-Wz-sWj"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="camera" id="zZR-NF-WQg">
                             <connections>
                                 <action selector="snapBarButtonItemTapped:" destination="BYZ-38-t0r" id="4Hp-lJ-eIn"/>
@@ -67,11 +68,30 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="OlR-up-DaC" id="Pun-BH-I4f"/>
+                        <segue destination="7tg-h2-HiN" kind="show" identifier="profileSegue" id="qtm-UV-YPV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1117" y="429"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="mjS-el-Big">
+            <objects>
+                <viewController id="7tg-h2-HiN" customClass="ProfileViewController" customModule="ExchangeAGram" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6k0-oW-VKU"/>
+                        <viewControllerLayoutGuide type="bottom" id="8v4-rL-Fa6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Wc9-qd-GpH">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TJr-ip-UbJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1832" y="429"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1oB-kq-UOQ">

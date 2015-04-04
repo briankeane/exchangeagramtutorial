@@ -501,4 +501,12 @@ let filterImage = self.getCachedImage(indexPath.row)
 collectionView.reloadData()
 ```
 
+#####Adding a Profile ViewController
+1. Add a ViewController to Main Storyboard
+2. Add a segue between the main ViewController and the new one -- call it profileSegue
+3. Add a 'Profile' bar button item to the other side of the main viewcontroller
+4. create a class that inherits from ViewController called ProfileViewController and set the new viewcontroller's custom class to it
+
+
+
 
