@@ -63,19 +63,20 @@ class FilterViewController: UIViewController, UICollectionViewDataSource, UIColl
         
         let cell:FilterCell = collectionView.dequeueReusableCellWithReuseIdentifier("MyCell", forIndexPath: indexPath) as FilterCell
         
-        if cell.imageView.image == nil {
-            cell.imageView.image = placeHolderImage
+
+        cell.imageView.image = placeHolderImage
+        
+        let filterQueue:dispatch_queue_t = dispatch_queue_create("filter queue", nil)
+        
+        dispatch_async(filterQueue, { () -> Void in
             
-            let filterQueue:dispatch_queue_t = dispatch_queue_create("filter queue", nil)
+            let filterImage = self.getCachedImage(indexPath.row)
             
-            dispatch_async(filterQueue, { () -> Void in
-                let filterImage = self.filteredImageFromImage(self.thisFeedItem.thumbnail, filter: self.filters[indexPath.row])
-                
-                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    cell.imageView.image = filterImage
-                })
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                cell.imageView.image = filterImage
             })
-        }
+        })
+
         
         return cell
     }

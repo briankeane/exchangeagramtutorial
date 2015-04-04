@@ -465,5 +465,18 @@ func application(application: UIApplication, didFinishLaunchingWithOptions launc
     }
 ```
 
+#####Implementing Caching
+1. in FilterViewController delete:
+```swift
+let filterImage = self.filteredImageFromImage(self.thisFeedItem.thumbnail, filter: self.filters[indexPath.row])
+```
+and replace with
+```swift
+let filterImage = self.getCachedImage(indexPath.row)
+```
+2. get rid of it's enclosing if statements
+
+#####Saving our Filter Choice
+
 
 
