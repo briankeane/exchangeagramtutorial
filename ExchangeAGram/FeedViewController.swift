@@ -17,8 +17,11 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
     var feedArray: [AnyObject] = []
     
     override func viewDidLoad() {
+    }
+    
+    override func viewDidAppear(animated: Bool) {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         
         let request = NSFetchRequest(entityName: "FeedItem")
@@ -26,7 +29,7 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
         let appDelegate:AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
         let context:NSManagedObjectContext = appDelegate.managedObjectContext!
         feedArray = context.executeFetchRequest(request, error: nil)!
-        
+        collectionView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {

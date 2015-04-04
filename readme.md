@@ -477,6 +477,28 @@ let filterImage = self.getCachedImage(indexPath.row)
 2. get rid of it's enclosing if statements
 
 #####Saving our Filter Choice
+1. Add UICollectionViewDelegate/didSelectItemAtIndexPath in FilterViewController -- make sure 'didSelect' instead of 'didDeselect'
+```swift
 
+    // UICollectionViewDelegate
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let filterImage = self.filteredImageFromImage(self.thisFeedItem.image, filter: self.filters[indexPath.row])
+        
+        let imageData = UIImageJPEGRepresentation(filterImage, 1.0)
+        self.thisFeedItem.image = imageData
+        let thumbNailData = UIImageJPEGRepresentation(filterImage, 0.1)
+        
+        (UIApplication.sharedApplication().delegate as AppDelegate).saveContext()
+        
+        self.navigationController?.popViewControllerAnimated(true)
+        
+    }
+    
+    // Helper Functions
+```
+2. Implement viewDidAppear in FeedController to refresh every time (cut everything from viewDidLoad and put it in viewDidAppear. Then at the end add the line:)
+```swift
+collectionView.reloadData()
+```
 
 

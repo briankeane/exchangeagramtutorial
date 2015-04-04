@@ -81,7 +81,21 @@ class FilterViewController: UIViewController, UICollectionViewDataSource, UIColl
         return cell
     }
     
-    // Helper Function
+    // UICollectionViewDelegate
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let filterImage = self.filteredImageFromImage(self.thisFeedItem.image, filter: self.filters[indexPath.row])
+        
+        let imageData = UIImageJPEGRepresentation(filterImage, 1.0)
+        self.thisFeedItem.image = imageData
+        let thumbNailData = UIImageJPEGRepresentation(filterImage, 0.1)
+        
+        (UIApplication.sharedApplication().delegate as AppDelegate).saveContext()
+        
+        self.navigationController?.popViewControllerAnimated(true)
+        
+    }
+    
+    // Helper Functions
     func photoFilters() -> [CIFilter] {
         
         let blur = CIFilter(name: "CIGaussianBlur")
