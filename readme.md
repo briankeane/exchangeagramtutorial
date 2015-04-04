@@ -517,6 +517,11 @@ collectionView.reloadData()
 #####Add the Facebook SDK
 1. Drag Core, Login, and Share 'FacebookSDK.framework' files from Documents/FacebookSDK into 'Supporting Files' in the project
 -- leave 'Copy Items if needed' blank
-2. 
+
+#####Setting up the PList
+1. add FacebookAppID and FacebookDisplayName to PList (with ctrl-click, 'Add Row')
+2. add URL types (will autocomplete).  then under 'Item 0' change 'URL...' to 'URL Schemes'... that brings up another dropdown. Under it's Item 0 store 'fbxxxxxxxx' with 'xxxxx' being your FacebookAppId.
+3. Ctrl-click the first Item 0, go to add row.  Add 'Document Role' with a String Value of 'Editor'. Should change Item 0 to 'Item 0(Editor)'
+
 
 
