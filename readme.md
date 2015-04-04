@@ -512,6 +512,11 @@ collectionView.reloadData()
 
 #####Install the Facebook SDK
 1. Download the Facebook SDK from http://www.facebook.com/docs/ios/getting-started
+2. On the facebook/settings page of your app make sure bundle id is correct and change 'Single Sign On' option to 'Yes'
 
+#####Add the Facebook SDK
+1. Drag Core, Login, and Share 'FacebookSDK.framework' files from Documents/FacebookSDK into 'Supporting Files' in the project
+-- leave 'Copy Items if needed' blank
+2. 
 
 
