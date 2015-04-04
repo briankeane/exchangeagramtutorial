@@ -507,6 +507,11 @@ collectionView.reloadData()
 3. Add a 'Profile' bar button item to the other side of the main viewcontroller
 4. create a class that inherits from ViewController called ProfileViewController and set the new viewcontroller's custom class to it
 
+#####Adding Elements to the ProfileViewController
+1. Add a UIImageView and Label and wire them into ProfileViewController as 'nameLabel' and 'profileImageView'
+
+#####Install the Facebook SDK
+1. Download the Facebook SDK from http://www.facebook.com/docs/ios/getting-started
 
 
 
